@@ -1,12 +1,10 @@
 import esphome.codegen as cg
 from esphome.components import binary_sensor, modbus_controller, number, sensor, switch
-from esphome.components.modbus_controller import ModbusController  # type: ignore[import-not-found]
-from esphome.components.modbus_controller.binary_sensor import (  # type: ignore[import-not-found]
-    ModbusBinarySensor,
-)
-from esphome.components.modbus_controller.number import ModbusNumber  # type: ignore[import-not-found]
-from esphome.components.modbus_controller.sensor import ModbusSensor  # type: ignore[import-not-found]
-from esphome.components.modbus_controller.switch import ModbusSwitch  # type: ignore[import-not-found]
+from esphome.components.modbus_controller import ModbusController
+from esphome.components.modbus_controller.binary_sensor import ModbusBinarySensor
+from esphome.components.modbus_controller.number import ModbusNumber
+from esphome.components.modbus_controller.sensor import ModbusSensor
+from esphome.components.modbus_controller.switch import ModbusSwitch
 import esphome.config_validation as cv
 from esphome.const import (
     CONF_ADDRESS,
@@ -135,7 +133,7 @@ async def to_code(config):
         value_type = register.value_type
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            esphome.components.modbus.helpers,
+            modbus_controller.ModbusRegisterType.HOLDING,
             conf[modbus_controller.CONF_ADDRESS],
             0,
             0xFFFFFFFF,
@@ -165,7 +163,7 @@ async def to_code(config):
 
                 var = cg.new_Pvariable(
                     conf[CONF_ID],
-                    esphome.components.modbus.helpers,
+                    modbus_controller.ModbusRegisterType.HOLDING,
                     conf[modbus_controller.CONF_ADDRESS],
                     0,
                     conf[modbus_controller.CONF_BITMASK],
@@ -188,7 +186,7 @@ async def to_code(config):
 
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            esphome.components.modbus.helpers,
+            modbus_controller.ModbusRegisterType.HOLDING,
             conf[modbus_controller.CONF_ADDRESS],
             0,
             0xFFFFFFFF,
@@ -216,7 +214,7 @@ async def to_code(config):
 
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            esphome.components.modbus.helpers,
+            modbus_controller.ModbusRegisterType.HOLDING,
             conf[CONF_ADDRESS],
             0,
             0xFFFFFFFF,
