@@ -135,7 +135,7 @@ async def to_code(config):
         value_type = register.value_type
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            modbus_controller.ModbusRegisterType.HOLDING,
+            esphome.components.modbus.helpers,
             conf[modbus_controller.CONF_ADDRESS],
             0,
             0xFFFFFFFF,
@@ -165,7 +165,7 @@ async def to_code(config):
 
                 var = cg.new_Pvariable(
                     conf[CONF_ID],
-                    modbus_controller.ModbusRegisterType.HOLDING,
+                    esphome.components.modbus.helpers,
                     conf[modbus_controller.CONF_ADDRESS],
                     0,
                     conf[modbus_controller.CONF_BITMASK],
@@ -188,7 +188,7 @@ async def to_code(config):
 
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            modbus_controller.ModbusRegisterType.HOLDING,
+            esphome.components.modbus.helpers,
             conf[modbus_controller.CONF_ADDRESS],
             0,
             0xFFFFFFFF,
@@ -216,7 +216,7 @@ async def to_code(config):
 
         var = cg.new_Pvariable(
             conf[CONF_ID],
-            modbus_controller.ModbusRegisterType.HOLDING,
+            esphome.components.modbus.helpers,
             conf[CONF_ADDRESS],
             0,
             0xFFFFFFFF,
