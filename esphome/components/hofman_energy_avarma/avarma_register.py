@@ -1,4 +1,4 @@
-from esphome.components.modbus.helpers import SENSOR_VALUE_TYPE
+from ..modbus_controller import SENSOR_VALUE_TYPE
 class _SensorValueTypeCompat:
     """Erlaubt weiterhin SensorValueType.S_WORD usw."""
     def __getattr__(self, name):
