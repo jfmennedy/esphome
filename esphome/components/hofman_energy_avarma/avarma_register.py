@@ -24,7 +24,7 @@ class AvarmaRegister:
         entity_category=cv.ENTITY_CATEGORY_NONE,
         device_class=DEVICE_CLASS_TEMPERATURE,
         flags=None,
-        value_type=SensorValueType.S_WORD,
+        value_type=SENSOR_VALUE_TYPE["S_WORD"],
         step=1.0,
         deactivated=False,
     ):
