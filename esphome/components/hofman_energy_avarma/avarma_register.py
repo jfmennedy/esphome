@@ -1,4 +1,9 @@
 from esphome.components.modbus.helpers import SENSOR_VALUE_TYPE
+class _SensorValueTypeCompat:
+    """Erlaubt weiterhin SensorValueType.S_WORD usw."""
+    def __getattr__(self, name):
+        return SENSOR_VALUE_TYPE[name]
+SensorValueType = _SensorValueTypeCompat()
 import esphome.config_validation as cv
 from esphome.const import DEVICE_CLASS_TEMPERATURE
 
@@ -24,7 +29,7 @@ class AvarmaRegister:
         entity_category=cv.ENTITY_CATEGORY_NONE,
         device_class=DEVICE_CLASS_TEMPERATURE,
         flags=None,
-        value_type=SENSOR_VALUE_TYPE["S_WORD"],
+        value_type=SensorValueType.S_WORD,
         step=1.0,
         deactivated=False,
     ):
