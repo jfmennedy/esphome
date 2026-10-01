@@ -1,4 +1,4 @@
-from esphome.components.modbus_controller import SensorValueType
+from esphome.components.modbus.helpers import SENSOR_VALUE_TYPE
 import esphome.config_validation as cv
 from esphome.const import DEVICE_CLASS_TEMPERATURE
 
