@@ -606,7 +606,9 @@ AVARMA_NUMBER_REGISTERS = [
         deactivated=True,
     ),
     NumberRegister(0x2000, 57, "P59", "PWM water pump minimum speed", 0, 100),
-    NumberRegister(0x2000, 58, "P60", "DC fan maximum speed", 500, 1500, 1, 0.1),
+    # Panel accepts well below the 500 rpm floor used on the 12 kW handbook.
+    # Register stores rpm/10; multiply 0.1 publishes rpm.
+    NumberRegister(0x2000, 58, "P60", "DC fan maximum speed", 200, 1500, 10, 0.1),
     NumberRegister(0x2000, 59, "P61", "Minimum water flow", 3, 80),
     NumberRegister(0x2000, 60, "P62", "AC function selection", 0, 2),
     NumberRegister(0x2000, 61, "P63", "DHW function selection", 0, 1),
