@@ -258,7 +258,7 @@ AVARMA_BINARY_REGISTERS = [
         "Fault State 2",
         flags=[
             AvarmaRegisterBinaryRegisterBit("Fan motor driver communication failure", 3),
-            AvarmaRegisterBinaryRegisterBit("Inlet/outlet water temp reverse or four-way valve", 6),
+            AvarmaRegisterBinaryRegisterBit("Inlet-outlet water temp reverse or four-way valve", 6),
             AvarmaRegisterBinaryRegisterBit("Cooling outlet water temp low protection", 7),
             AvarmaRegisterBinaryRegisterBit("1# DC motor error", 11),
             AvarmaRegisterBinaryRegisterBit("2# DC motor error", 12),
