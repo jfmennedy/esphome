@@ -132,6 +132,7 @@ AVARMA_SENSOR_REGISTERS = [
     TempRegister(0x1100, 34, "C28", "Condenser temperature"),
     TempRegister(0x1100, 37, "C37", "Target water temperature heating", 10, 75),
     AvarmaRegister(0x1100, 45, "DPumpPWM", "C1 Pump PWM Value"),
+    AvarmaRegister(0x1200, 1, "C49", "Return lubricant oil status", device_class=None,),
 ]
 
 AVARMA_BINARY_REGISTERS = [
